@@ -4,7 +4,7 @@ using namespace std;
 int myStrLen(const char *command)
 {
 	int count = 0;
-	while (*command != '\0') //*str vryshta 1 el ot masiv
+	while (*command != '\0') 
 	{
 		count++;
 		command++;
@@ -107,7 +107,7 @@ int main()
 	{
 		cout << "Plese enter a command." << endl;
 		char command[7];
-		cin.getline(command, 7);//ne raboti????
+		cin.getline(command, 7);
 		
 
 		while (myStrCmp("open", command) == false && myStrCmp("mark", command) == false && myStrCmp("unmark", command) == false)
@@ -161,7 +161,7 @@ int main()
 				cout << "This position hasn't been marked." << endl;
 			}
 		}
-		if (countOpenPos == fieldSize * fieldSize - mines && countMarkedMines == mines) //?trqbva li i minite i open pos da se izpylnqt
+		if (countOpenPos == fieldSize * fieldSize - mines && countMarkedMines == mines) 
 		{
 			hasWon = true;
 		}
