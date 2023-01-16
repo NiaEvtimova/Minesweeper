@@ -65,7 +65,6 @@ int main()
 	cout << "Please enter how many mines you want in your game." << endl;
 	int mines;
 	cin >> mines;
-	cin.ignore();
 	validate(mines, 1, 3 * fieldSize);
 
 	const int maxSize = 10;
@@ -105,14 +104,15 @@ int main()
 	bool hasWon = false;
 	while (!hasLost || hasWon)
 	{
-		cout << "Plese enter a command." << endl;
+		cout << "Please enter a command." << endl;
 		char command[7];
+		cin.ignore();
 		cin.getline(command, 7);
 		
 
 		while (myStrCmp("open", command) == false && myStrCmp("mark", command) == false && myStrCmp("unmark", command) == false)
 		{
-			cout << "Plese enter a valid command." << endl;
+			cout << "Please enter a valid command." << endl;
 			cin.getline(command, 8);
 		}
 
@@ -120,7 +120,7 @@ int main()
 		int x;
 		cin >> x;
 		validate(x, 0, fieldSize - 1);
-		cout << "Please enter coordinate x." << endl;
+		cout << "Please enter coordinate y." << endl;
 		int y;
 		cin >> y;
 		validate(y, 0, fieldSize - 1);
